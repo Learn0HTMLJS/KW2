@@ -8,7 +8,7 @@ app.use(cors());
 
 const page = app.use('/' ,express.static('Client'));
 
-app.post('/', jsonParser, function (request, response) {
+app.post('/', function (request, response) {
   let header = request.get('Content-Type1');
   if(header != 'application/json1')
   {
@@ -24,7 +24,7 @@ app.post('/', jsonParser, function (request, response) {
     formData.append('Date', Date.value);
     formData.append('Name', Name.value);
     formData.append('Level', Level.value);*/
-  let d = request.body.JSON.Date;
+  let d = request.body.JSON;
   console.log(d);
   let Type = d['Type'];
   let Date = d['Date'];
